@@ -1,7 +1,7 @@
 {
-  "bg": "https://wallpapercave.com/wp/wp238833.jpg",
-  "title": "Minecraft Quiz",
-  "description": "Teste os seus conhecimentos sobre Minecraft",
+  "bg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2F5WImNG6.jpg&f=1&nofb=1",
+  "title": "Geo Quiz",
+  "description": "Teste os seus conhecimentos em geografia",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
@@ -31,7 +31,7 @@
   ],
   "theme": {
     "colors": {
-      "primary": "#76ff03",
+      "primary": "#00FF00",
       "secondary": "#fad586",
       "mainBg": "#272727",
       "grey": "#181818",
