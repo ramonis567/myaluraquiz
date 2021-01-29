@@ -23,7 +23,8 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-`
+}
+`;
 
 export default function App({ Component, pageProps }) {
   return (
