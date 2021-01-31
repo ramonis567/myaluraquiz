@@ -6,6 +6,7 @@ const Widget = styled.div`
   background-color: ${({ theme }) => {
     return theme.colors.mainBg;
   }};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
   border-radius: 5px;
   overflow: hidden;
   h1, h2, h3 {
