@@ -30,9 +30,24 @@ export default function App({ Component, pageProps }) {
   return (
       <ThemeProvider theme={theme}>
         <Head>
-          <title>GeoQuiz - My Alura Quiz</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <meta property="og:title" content="GeoQuiz - My Alura Quiz" key="title" />
+          {/*<!-- Primary Meta Tags -->*/}
+          <title>Geo Quiz - Teste os seus conhecimentos em geografia</title>
+          <meta name="title" content="Geo Quiz - Teste os seus conhecimentos em geografia" />
+          <meta name="description" content="Testes os seus conhecimentos sobre o mundo e geografia em geral. Criado durante a Imersão de React/Next da Alura." />
+
+          {/*<!-- Open Graph / Facebook -->*/}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://metatags.io/" />
+          <meta property="og:title" content="Geo Quiz - Teste os seus conhecimentos em geografia" />
+          <meta property="og:description" content="Testes os seus conhecimentos sobre o mundo e geografia em geral. Criado durante a Imersão de React/Next da Alura." />
+          <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+
+          {/*<!-- Twitter -->*/}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://metatags.io/" />
+          <meta property="twitter:title" content="Geo Quiz - Teste os seus conhecimentos em geografia" />
+          <meta property="twitter:description" content="Testes os seus conhecimentos sobre o mundo e geografia em geral. Criado durante a Imersão de React/Next da Alura." />
+          <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
           <link rel="shortcut icon" href="../src/assets/favicon.ico" />
         </Head>
         <GlobalStyle />
