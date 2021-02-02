@@ -20,10 +20,13 @@ const ButtonBase = styled.button`
   margin-top: 5px;
 `;
 
-export default function Input({ onChange }) {
+export default function Input({ onChange, placeholder, ...props }) {
   return (
     <div>
-      <InputBase onChange={onChange}/>
+      <InputBase 
+        placeholder={placeholder}
+        onChange={onChange}
+      />
       <ButtonBase>JOGAR </ButtonBase>
     </div>
   )
