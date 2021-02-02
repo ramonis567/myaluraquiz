@@ -38,7 +38,6 @@ const Button = styled.button`
 
 export default function QuizPage() {
   const router = useRouter();
-  const [name, setName] = React.useState('');
 
   return (
     <QuizBackground backgroundImage={db.bg}>
