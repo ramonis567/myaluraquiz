@@ -8,13 +8,6 @@ import GitHubCorner from '../src/components/GithubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 
-const BackgroundImage = styled.div`
-  background-image: url(${db.bg});
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-`;
-
 export const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
@@ -24,6 +17,28 @@ export const QuizContainer = styled.div`
     margin: auto;
     padding: 15px;
   }
+`;
+
+const FormContainer = styled.form`
+  display: grid;
+`;
+
+const Input = styled.input`
+  padding: 10px;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.grey};
+  opacity: 0.9;
+  color: ${({ theme }) => theme.colors.contrastText};
+  margin-top: 10px;
+  outline: 0;
+`;
+
+const Button = styled.button`
+  padding: 10px;
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.contrastText};
+  border: 0px;
+  margin-top: 5px;
 `;
 
 export default function Home() {
@@ -45,22 +60,20 @@ export default function Home() {
                 {db.description}
               </p>
 
-              <form onSubmit={function handleSubmit(event) {
+              <FormContainer onSubmit={(event) => {
                 event.preventDefault();
                 router.push(`/quiz?nickname=${name}`);
-                console.log(event);
               }}>
-                <input 
+                <Input 
                   placeholder="Digite o seu nome" 
                   onChange={(event) => {
-                    console.log(event.target.value);
                     setName(event.target.value);
                   }}
                 />
-                <button type="submit" disabled={name.length === 0}>
-                  Jogar {name}
-                </button>
-              </form>
+                <Button type="submit" disabled={name.length === 0}>
+                  JOGAR {name}
+                </Button>
+              </FormContainer>
             </Widget.Content>
           </Widget>
           <Widget>

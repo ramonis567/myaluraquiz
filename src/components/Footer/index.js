@@ -3,6 +3,7 @@ import styled from 'styled-components'
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
   background-color: #000000;
+  opacity: 0.80;
   padding: 20px;
   display: flex;
   align-items: center;

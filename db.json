@@ -1,7 +1,7 @@
 {
-  "bg": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2F5WImNG6.jpg&f=1&nofb=1",
+  "bg": "https://images5.alphacoders.com/311/thumb-1920-311151.jpg",
   "title": "Geo Quiz",
-  "description": "Teste os seus conhecimentos em Geografia!",
+  "description": "Teste os seus conhecimentos sobre o mundo e em Geografia!",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
@@ -31,8 +31,8 @@
   ],
   "theme": {
     "colors": {
-      "primary": "#00FF00",
-      "secondary": "#fad586",
+      "primary": "#2A5559",
+      "secondary": "#D92B04",
       "mainBg": "#272727",
       "grey": "#181818",
       "contrastText": "#FDFDFD",
