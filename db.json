@@ -26,7 +26,21 @@
          "background: linear-gradient(#e66465, #9198e5);",
          "background: gradient(#e66465, #9198e5);"
       ]
+    },
+    {
+      "id": 2,
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "question 3",
+      "description": "Essa é pra aquecer 2222",
+      "answer": 2,
+      "alternatives": [
+        ".elemento33",
+        "*elemento43242",
+        "#elemento532",
+        "%elemento45"
+      ]
     }
+
   ],
   "external": [
     ""
