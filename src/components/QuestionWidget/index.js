@@ -21,7 +21,7 @@ const Button = styled.button`
   }
 `;
 
-export default function QuestionWidget({questionI, question, totalQuestions}){
+export default function QuestionWidget({questionI, question, totalQuestions, onSubmit}){
   return (
     <Widget>
       <Widget.Header>
@@ -49,6 +49,7 @@ export default function QuestionWidget({questionI, question, totalQuestions}){
         </p>
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
+          onSubmit();
         }}>
           {question.alternatives.map((alt) => {
             return (
@@ -56,6 +57,9 @@ export default function QuestionWidget({questionI, question, totalQuestions}){
                 as="label"
               >
                 <input 
+                  // {style={{
+                  //   display: "none",
+                  // }}}
                   type="radio"
                   name={`question__${questionI}`}
                 />
@@ -63,7 +67,7 @@ export default function QuestionWidget({questionI, question, totalQuestions}){
               </Widget.Topic>
             );
           })}
-          <Button>
+          <Button type="submit">
             Confirmar
           </Button>
         </FormContainer>
