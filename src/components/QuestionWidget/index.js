@@ -22,6 +22,12 @@ const Button = styled.button`
 `;
 
 export default function QuestionWidget({questionI, question, totalQuestions, onSubmit}){
+  const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
+  const [formSubmited, setFormSubmited] = React.useState(false);
+  const isCorrect = selectedAlternative === question.answer; //boolean
+  const hasAlternativeSelected = selectedAlternative !== undefined;
+  const [results, setResults] = React.useState([]);
+
   return (
     <Widget>
       <Widget.Header>
@@ -49,9 +55,15 @@ export default function QuestionWidget({questionI, question, totalQuestions, onS
         </p>
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
-          onSubmit();
+          setFormSubmited(true);
+          setTimeout(() => {
+            setSelectedAlternative(undefined);
+            setFormSubmited(false);
+            onSubmit();
+          }, 2*1000);
         }}>
-          {question.alternatives.map((alt) => {
+          {question.alternatives.map((alt, altIndex) => {
+            const alternativeId = `alternative__${altIndex}`;
             return (
               <Widget.Topic
                 as="label"
@@ -60,16 +72,27 @@ export default function QuestionWidget({questionI, question, totalQuestions, onS
                   // {style={{
                   //   display: "none",
                   // }}}
+                  key={''}
                   type="radio"
                   name={`question__${questionI}`}
+                  onChange={() => {
+                    setSelectedAlternative(altIndex);
+                  }}
                 />
                 {alt}
               </Widget.Topic>
             );
           })}
-          <Button type="submit">
+          <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
+          {formSubmited &&  
+            <>
+              {isCorrect && <p>Você acertou! :)</p>}
+              {!isCorrect && <p>Você errou! :(</p>}
+            </>
+          }
+          
         </FormContainer>
           
       </Widget.Content>

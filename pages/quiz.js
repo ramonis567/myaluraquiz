@@ -1,6 +1,5 @@
 import React from 'react';
 import db from '../db.json';
-import Widget from '../src/components/Widget';
 import GitHubCorner from '../src/components/GithubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';

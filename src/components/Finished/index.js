@@ -1,14 +1,16 @@
 import React from 'react';
 import Widget from '../Widget';
 
+
 export default function Finished() {
   return (
     <Widget>
       <Widget.Header>
-        Resultado
+        Resultados
       </Widget.Header>
       <Widget.Content>
-        [Acertou e Errou]
+        <h3>Seus resultados:</h3>
+        {}
       </Widget.Content>
     </Widget>
   )
