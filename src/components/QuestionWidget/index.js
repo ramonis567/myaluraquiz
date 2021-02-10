@@ -1,4 +1,3 @@
-import react from 'react';
 import styled from 'styled-components';
 import Widget from '../Widget';
 
@@ -21,12 +20,17 @@ const Button = styled.button`
   }
 `;
 
-export default function QuestionWidget({questionI, question, totalQuestions, onSubmit}){
+export default function QuestionWidget({
+    questionI, 
+    question, 
+    totalQuestions, 
+    onSubmit, 
+    questionCorrect
+  }){
   const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
   const [formSubmited, setFormSubmited] = React.useState(false);
   const isCorrect = selectedAlternative === question.answer; //boolean
   const hasAlternativeSelected = selectedAlternative !== undefined;
-  const [results, setResults] = React.useState([]);
 
   return (
     <Widget>
@@ -55,6 +59,7 @@ export default function QuestionWidget({questionI, question, totalQuestions, onS
         </p>
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
+          questionCorrect(isCorrect);
           setFormSubmited(true);
           setTimeout(() => {
             setSelectedAlternative(undefined);
@@ -94,7 +99,7 @@ export default function QuestionWidget({questionI, question, totalQuestions, onS
           }
           
         </FormContainer>
-          
+        
       </Widget.Content>
       
     </Widget>

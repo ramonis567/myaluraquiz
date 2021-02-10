@@ -21,6 +21,7 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionI = currentQuestion;
   const question = db.questions[questionI];
+  const [results, setResults] = React.useState([]);
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -36,6 +37,11 @@ export default function QuizPage() {
       setScreenState(screenStates.FINISHED);
     }
   }
+
+  const isQuestionCorrect = (isCorrect) => {
+    results.push(isCorrect);
+    console.log(results);
+  }
   
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -50,9 +56,10 @@ export default function QuizPage() {
           question={question}
           totalQuestions={totalQuestions}
           onSubmit={handleSubmit}
+          questionCorrect={isQuestionCorrect}
         />}
 
-        {screenState === screenStates.FINISHED && <Finished />}
+        {screenState === screenStates.FINISHED && <Finished results={results}/>}
 
         <Footer />
 
