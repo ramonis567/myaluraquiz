@@ -22,6 +22,7 @@ export default function QuizPage() {
   const questionI = currentQuestion;
   const question = db.questions[questionI];
   const [results, setResults] = React.useState([]);
+  const [correctCounter, setCorrectCounter] = React.useState(0);
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -40,7 +41,9 @@ export default function QuizPage() {
 
   const isQuestionCorrect = (isCorrect) => {
     results.push(isCorrect);
-    console.log(results);
+    if(isCorrect === true){
+      setCorrectCounter(1 + correctCounter);
+    }
   }
   
   return (
@@ -59,7 +62,7 @@ export default function QuizPage() {
           questionCorrect={isQuestionCorrect}
         />}
 
-        {screenState === screenStates.FINISHED && <Finished results={results}/>}
+        {screenState === screenStates.FINISHED && <Finished results={results} totalQuestions={totalQuestions} correctCounter={correctCounter}/>}
 
         <Footer />
 

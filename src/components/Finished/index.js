@@ -1,23 +1,23 @@
 import React from 'react';
 import Widget from '../Widget';
 
-export default function Finished({ results }) {
+export default function Finished({ results, totalQuestions, correctCounter }) {
   return (
     <Widget>
       <Widget.Header>
         <h1>Resultados:</h1>
       </Widget.Header>
       <Widget.Content>
-        <p>{results.filter((x) => x).length}</p>
-        <p>{results}</p>
-        {/* {{db.questions.forEach((i) => {
-          const questionName =  `Questão ${i + 1}: `;
-          if(results[i]){
-            return <p>{questionName}CORRETO</p>
+        {results.map((result, index) => {
+          const textResult =  `Questão ${index + 1}: `;
+          if(result){
+            return <p>{textResult}CORRETO</p>
           }else {
-            return <p>{questionName}INCORRETO</p>
+            return <p>{textResult}INCORRETO</p>
           }
-        })}} */}
+        })}
+        <h4>Acertos: {correctCounter}/{totalQuestions}</h4>
+
       </Widget.Content>
     </Widget>
   )

@@ -26,6 +26,19 @@
          "background: linear-gradient(#e66465, #9198e5);",
          "background: gradient(#e66465, #9198e5);"
       ]
+    },
+    {
+      "id": 0,
+      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "title": "Como fazer um seletor por id via CSS?",
+      "description": "Essa é pra aquecer",
+      "answer": 1,
+      "alternatives": [
+        ".elemento",
+        "*elemento",
+        "#elemento",
+        "%elemento"
+      ]
     }
   ],
   "external": [
