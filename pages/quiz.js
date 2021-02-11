@@ -28,7 +28,7 @@ export default function QuizPage() {
     setTimeout(() => {
       setScreenState(screenStates.LOADED);
     }, 2*1000);
-    //Component.didMount
+    //Component.didMount -> React Lifecycle
   }, []);
 
   function handleSubmit(){
@@ -41,8 +41,9 @@ export default function QuizPage() {
 
   const isQuestionCorrect = (isCorrect) => {
     results.push(isCorrect);
+    //Reduce? 
     if(isCorrect === true){
-      setCorrectCounter(1 + correctCounter);
+      setCorrectCounter(1 + correctCounter); 
     }
   }
   

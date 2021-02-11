@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import Widget from '../Widget';
-
-const FormContainer = styled.form`
-  display: grid;
-  margin-top: 5px;
-`;
+import AlternativeForm from '../AlternativeForm';
 
 const Button = styled.button`
   padding: 10px;
@@ -57,7 +53,7 @@ export default function QuestionWidget({
         <p>
           {question.description}
         </p>
-        <FormContainer onSubmit={(event) => {
+        <AlternativeForm onSubmit={(event) => {
           event.preventDefault();
           questionCorrect(isCorrect);
           setFormSubmited(true);
@@ -69,14 +65,19 @@ export default function QuestionWidget({
         }}>
           {question.alternatives.map((alt, altIndex) => {
             const alternativeId = `alternative__${altIndex}`;
+            const alternativeStatus = isCorrect ? "SUCCESS" : "ERROR";
+            const isSelected = selectedAlternative === altIndex;
             return (
               <Widget.Topic
                 as="label"
+                key={alternativeId}
+                data-selected={isSelected}
+                data-status={formSubmited && alternativeStatus}
               >
                 <input 
-                  // {style={{
-                  //   display: "none",
-                  // }}}
+                  style={{
+                    display: "none",
+                  }}
                   key={''}
                   type="radio"
                   name={`question__${questionI}`}
@@ -98,7 +99,7 @@ export default function QuestionWidget({
             </>
           }
           
-        </FormContainer>
+        </AlternativeForm>
         
       </Widget.Content>
       
