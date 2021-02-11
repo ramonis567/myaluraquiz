@@ -13,3 +13,6 @@ export default function dbHandler(request, response) {
 
   response.json(db);
 }
+
+
+// VER CROSS-ORIGIN ERROR
