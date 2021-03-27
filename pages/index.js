@@ -7,7 +7,7 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GithubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
-import QuizContainer from '../src/components/QuizContainer'
+import QuizContainer from '../src/components/QuizContainer';
 
 export const FormContainer = styled.form`
   display: grid;
