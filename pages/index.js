@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import db from '../db.json';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GithubCorner';
@@ -84,7 +85,7 @@ export default function Home() {
                     {userGithub}/{projectName}
                   </Widget.Topic>
                 </li>;
-            })}
+              })}
             </ul>
           </Widget.Content>
         </Widget>
