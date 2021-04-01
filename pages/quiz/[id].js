@@ -1,12 +1,17 @@
+import { delBasePath } from "next/dist/next-server/lib/router/router";
 import React from "react";
+import { ThemeProvider } from "styled-components";
 import QuizScreen from "../../src/screens/Quiz";
 
 export default function QuizDaGaleraPage(props) {
   return (
+    <ThemeProvider theme={props.externalDb.theme}>
       <QuizScreen 
         externalQuestions={props.externalDb.questions}
         externalBackground={props.externalDb.bg}
       />
+    </ThemeProvider>
+      
       /*<pre style={{color:"black"}}>
         {JSON.stringify(props.externalDb.questions, null, 4)}
       </pre> */
@@ -15,7 +20,8 @@ export default function QuizDaGaleraPage(props) {
 }
 
 export async function getServerSideProps(context) {
-  const externalDb = await fetch("https://aluraquiz-css.omariosouto.vercel.app/api/db")
+  const [projectName, userGithub] = context.query.id.split("___");
+  const externalDb = await fetch(`https://${projectName}.${userGithub}.vercel.app/api/db`)
     .then((serverResponse) => {
       if(serverResponse.ok){
         return serverResponse.json();
@@ -28,8 +34,6 @@ export async function getServerSideProps(context) {
     .catch((err) => {
       console.log(err);
     })
-
-    console.log(externalDb);
 
   return {
     props: { externalDb },
