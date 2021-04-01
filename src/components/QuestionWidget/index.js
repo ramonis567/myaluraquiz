@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Widget from '../Widget';
 import AlternativeForm from '../AlternativeForm';
+import BackLinkArrow from '../BackLinkArrow'
 
 const Button = styled.button`
   padding: 10px;
@@ -31,7 +32,8 @@ export default function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
-        <h2>
+        <BackLinkArrow href="/" />
+        <h2 style={{ marginLeft: "10px" }}>
           Pergunta {questionI + 1} de {totalQuestions}
         </h2>
       </Widget.Header>

@@ -1,4 +1,3 @@
-import { delBasePath } from "next/dist/next-server/lib/router/router";
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import QuizScreen from "../../src/screens/Quiz";
