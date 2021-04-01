@@ -46,7 +46,16 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ duration: 0, delay: 0}}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 }
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>
             <h1>
               {db.title}
@@ -72,8 +81,18 @@ export default function Home() {
               </Button>
             </FormContainer>
           </Widget.Content>
-         </Widget>
-         <Widget>
+        </Widget>
+        <Widget
+          as={motion.section}
+          transition={{ duration: 0.5, delay: 0.5}}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 }
+          }}
+          initial="hidden"
+          animate="show"
+        >
+
           <Widget.Content>
             <h1>Quizes da Galera</h1>
             <ul>
@@ -89,7 +108,16 @@ export default function Home() {
             </ul>
           </Widget.Content>
         </Widget>
-        <Footer/>
+        <Footer   
+          as={motion.section}
+          transition={{ duration: 0.75, delay: 0.75 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 }
+          }}
+          initial="hidden"
+          animate="show"
+        />
       </QuizContainer>
 
       <GitHubCorner projectUrl="https://github.com/ramonis567/myaluraquiz"/>
