@@ -8,6 +8,7 @@ import GitHubCorner from '../src/components/GithubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizContainer from '../src/components/QuizContainer';
+import Link from '../src/components/Link';
 
 export const FormContainer = styled.form`
   display: grid;
@@ -79,7 +80,7 @@ export default function Home() {
                 const [projectName, userGithub] = linkExterno.replace(/\//g, "").replace("https:", "").replace(".vercel.app", "").split(".");
                 // USO DE REGEX ^
                 return <li key={linkExterno}>
-                  <Widget.Topic href={`/quiz/${projectName}___${userGithub}`}>
+                  <Widget.Topic href={`/quiz/${projectName}___${userGithub}`} as={Link}>
                     {userGithub}/{projectName}
                   </Widget.Topic>
                 </li>;
